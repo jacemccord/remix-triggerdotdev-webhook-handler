@@ -1,4 +1,4 @@
-# Remix Webhook Handler Documentation
+# Remix Trigger.dev Webhook Handler Documentation
 
 A modern React Router application with Trigger.dev integration for webhook handling and real-time task monitoring.
 

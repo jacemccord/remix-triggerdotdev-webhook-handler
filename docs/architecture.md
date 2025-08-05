@@ -1,6 +1,6 @@
 # Architecture Overview
 
-This document provides a comprehensive overview of the Remix Webhook Handler system architecture, components, and data flow.
+This document provides a comprehensive overview of the Remix Trigger.dev Webhook Handler system architecture, components, and data flow.
 
 ## 📋 Table of Contents
 
@@ -14,7 +14,7 @@ This document provides a comprehensive overview of the Remix Webhook Handler sys
 
 ## 🏗 System Overview
 
-The Remix Webhook Handler is a modern web application built on React Router 7 that provides webhook processing capabilities with real-time monitoring. The system is designed around three main pillars:
+The Remix Trigger.dev Webhook Handler is a modern web application built on React Router 7 that provides webhook processing capabilities with real-time monitoring. The system is designed around three main pillars:
 
 1. **Webhook Processing**: Receive and validate external webhook payloads
 2. **Background Task Execution**: Process tasks asynchronously using Trigger.dev

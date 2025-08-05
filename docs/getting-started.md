@@ -1,6 +1,6 @@
 # Getting Started
 
-This guide will walk you through setting up and running the Remix Webhook Handler project from scratch.
+This guide will walk you through setting up and running the Remix Trigger.dev Webhook Handler project from scratch.
 
 ## 📋 Prerequisites
 
@@ -17,7 +17,7 @@ Before you begin, ensure you have the following installed:
 
 ```bash
 git clone <your-repository-url>
-cd remix-webhook-handler-test
+cd remix-triggerdotdev-webhook-handler
 ```
 
 ### 2. Install Dependencies
@@ -139,7 +139,7 @@ curl http://localhost:5173/api/hello-world
 ## 📁 Project Structure Overview
 
 ```
-remix-webhook-handler-test/
+remix-triggerdotdev-webhook-handler/
 ├── app/                          # React Router application
 │   ├── components/
 │   │   └── RealtimeDemo.tsx     # Real-time task monitoring component

@@ -1,6 +1,6 @@
 # API Reference
 
-Complete documentation for all API endpoints in the Remix Webhook Handler project.
+Complete documentation for all API endpoints in the Remix Trigger.dev Webhook Handler project.
 
 ## 📋 Table of Contents
 

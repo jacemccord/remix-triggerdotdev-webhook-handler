@@ -1,6 +1,6 @@
-# Remix Webhook Handler Test
+# Remix Trigger.dev Webhook Handler
 
-A modern, production-ready template for building full-stack React applications using React Router with webhook handling capabilities and real-time features.
+A modern, production-ready template for building full-stack React applications using React Router with webhook handling capabilities and real-time features powered by Trigger.dev.
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
 

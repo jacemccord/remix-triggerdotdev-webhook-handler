@@ -1,6 +1,6 @@
 # Deployment Guide
 
-Complete guide for deploying the Remix Webhook Handler to production environments.
+Complete guide for deploying the Remix Trigger.dev Webhook Handler to production environments.
 
 ## 📋 Table of Contents
 
@@ -15,7 +15,7 @@ Complete guide for deploying the Remix Webhook Handler to production environment
 
 ## 🔍 Overview
 
-This guide covers deploying the Remix Webhook Handler to production environments. The application is designed to be deployed as a containerized service with external Trigger.dev integration for background task processing.
+This guide covers deploying the Remix Trigger.dev Webhook Handler to production environments. The application is designed to be deployed as a containerized service with external Trigger.dev integration for background task processing.
 
 ### Deployment Architecture
 
@@ -117,7 +117,7 @@ The project includes a multi-stage [`Dockerfile`](../Dockerfile) optimized for p
 
 ```dockerfile
 # Build the application
-docker build -t remix-webhook-handler .
+docker build -t remix-triggerdotdev-webhook-handler .
 
 # Run with environment variables
 docker run -d \
@@ -125,7 +125,7 @@ docker run -d \
   -p 3000:3000 \
   -e TRIGGER_SECRET_KEY="tr_prod_your_key" \
   -e TRIGGER_PROJECT_ID="proj_your_id" \
-  remix-webhook-handler
+  remix-triggerdotdev-webhook-handler
 ```
 
 ### Docker Compose for Production
@@ -192,7 +192,7 @@ docker-compose -f docker-compose.prod.yml logs -f webhook-handler
 
 ```json
 {
-  "family": "remix-webhook-handler",
+  "family": "remix-triggerdotdev-webhook-handler",
   "networkMode": "awsvpc",
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "256",
@@ -201,7 +201,7 @@ docker-compose -f docker-compose.prod.yml logs -f webhook-handler
   "containerDefinitions": [
     {
       "name": "webhook-handler",
-      "image": "your-account.dkr.ecr.region.amazonaws.com/remix-webhook-handler:latest",
+      "image": "your-account.dkr.ecr.region.amazonaws.com/remix-triggerdotdev-webhook-handler:latest",
       "portMappings": [
         {
           "containerPort": 3000,
@@ -223,7 +223,7 @@ docker-compose -f docker-compose.prod.yml logs -f webhook-handler
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "/ecs/remix-webhook-handler",
+          "awslogs-group": "/ecs/remix-triggerdotdev-webhook-handler",
           "awslogs-region": "us-east-1",
           "awslogs-stream-prefix": "ecs"
         }
@@ -239,9 +239,9 @@ docker-compose -f docker-compose.prod.yml logs -f webhook-handler
 # Build and push to ECR
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin account.dkr.ecr.us-east-1.amazonaws.com
 
-docker build -t remix-webhook-handler .
-docker tag remix-webhook-handler:latest account.dkr.ecr.us-east-1.amazonaws.com/remix-webhook-handler:latest
-docker push account.dkr.ecr.us-east-1.amazonaws.com/remix-webhook-handler:latest
+docker build -t remix-triggerdotdev-webhook-handler .
+docker tag remix-triggerdotdev-webhook-handler:latest account.dkr.ecr.us-east-1.amazonaws.com/remix-triggerdotdev-webhook-handler:latest
+docker push account.dkr.ecr.us-east-1.amazonaws.com/remix-triggerdotdev-webhook-handler:latest
 
 # Create ECS service
 aws ecs create-service \
@@ -259,10 +259,10 @@ aws ecs create-service \
 
 ```bash
 # Build and deploy
-gcloud builds submit --tag gcr.io/PROJECT-ID/remix-webhook-handler
+gcloud builds submit --tag gcr.io/PROJECT-ID/remix-triggerdotdev-webhook-handler
 
 gcloud run deploy webhook-handler \
-  --image gcr.io/PROJECT-ID/remix-webhook-handler \
+  --image gcr.io/PROJECT-ID/remix-triggerdotdev-webhook-handler \
   --platform managed \
   --region us-central1 \
   --allow-unauthenticated \
@@ -304,7 +304,7 @@ az containerapp create \
   --name webhook-handler \
   --resource-group webhook-handler-rg \
   --environment webhook-handler-env \
-  --image your-registry.azurecr.io/remix-webhook-handler:latest \
+  --image your-registry.azurecr.io/remix-triggerdotdev-webhook-handler:latest \
   --target-port 3000 \
   --ingress external \
   --env-vars NODE_ENV=production \
@@ -693,4 +693,4 @@ export async function action({ request }: { request: Request }) {
 
 ---
 
-**Deployment Complete!** Your Remix Webhook Handler is now ready for production use. Monitor the application closely during the first few days and adjust resources as needed based on actual usage patterns.
+**Deployment Complete!** Your Remix Trigger.dev Webhook Handler is now ready for production use. Monitor the application closely during the first few days and adjust resources as needed based on actual usage patterns.
