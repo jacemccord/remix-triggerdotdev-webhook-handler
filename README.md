@@ -1,6 +1,6 @@
-# Welcome to React Router!
+# Remix Webhook Handler Test
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A modern, production-ready template for building full-stack React applications using React Router with webhook handling capabilities and real-time features.
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
 
@@ -12,76 +12,52 @@ A modern, production-ready template for building full-stack React applications u
 - 🔄 Data loading and mutations
 - 🔒 TypeScript by default
 - 🎉 TailwindCSS for styling
+- 🪝 Webhook handling with Trigger.dev integration
+- 📡 Real-time capabilities
 - 📖 [React Router docs](https://reactrouter.com/)
 
-## Getting Started
+## Quick Start
 
-### Installation
-
-Install the dependencies:
+Install dependencies and start the development server:
 
 ```bash
 npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
 npm run dev
 ```
 
 Your application will be available at `http://localhost:5173`.
 
-## Building for Production
+## Documentation
 
-Create a production build:
+📚 **Complete documentation is available in the [`docs/`](./docs/) folder:**
+
+- **[Main Documentation](./docs/README.md)** - Overview and project structure
+- **[Getting Started](./docs/getting-started.md)** - Detailed setup and configuration guide
+- **[API Reference](./docs/api-reference.md)** - Complete API documentation
+- **[Architecture](./docs/architecture.md)** - System design and component overview
+- **[Deployment](./docs/deployment.md)** - Production deployment guide
+
+> 💡 **New to this project?** Start with the [Getting Started Guide](./docs/getting-started.md) for a comprehensive walkthrough.
+
+## Essential Commands
 
 ```bash
-npm run build
-```
+# Development
+npm run dev          # Start development server
 
-## Deployment
+# Production
+npm run build        # Create production build
+npm start           # Start production server
 
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
+# Docker
 docker build -t my-app .
-
-# Run the container
 docker run -p 3000:3000 my-app
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
+## Project Structure
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+This project includes webhook handling capabilities with Trigger.dev integration and real-time features. For detailed information about the architecture, API endpoints, and deployment options, please refer to the comprehensive documentation in the [`docs/`](./docs/) folder.
 
 ---
 
-Built with ❤️ using React Router.
+Built with ❤️ using React Router and Trigger.dev.
